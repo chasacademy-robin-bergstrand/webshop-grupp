@@ -51,6 +51,7 @@ model User {
     id            String    @id @default(cuid())
     name          String?
     email         String?   @unique
+    isAdmin       Boolean
     emailVerified DateTime?
     address       String?
     phonenumber   String?
@@ -75,6 +76,7 @@ model Product {
     sale        Int?
     stock       Int
     brand       String
+    images      Image[]
     name        String
     description String
     category    Category @relation(fields: [categoryId], references: [id])
@@ -83,6 +85,13 @@ model Product {
     userId      String?
     order       Order?   @relation(fields: [orderId], references: [id])
     orderId     String?
+}
+
+model Image {
+    id        String   @id @default(cuid())
+    url       String
+    Product   Product? @relation(fields: [productId], references: [id])
+    productId String?
 }
 
 model Category {
