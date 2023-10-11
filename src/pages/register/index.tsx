@@ -2,9 +2,7 @@ import { CheckCircleIcon } from "@heroicons/react/24/outline";
 import React from "react";
 import RegeisterForm from "~/Components/RegeisterForm";
 
-type Props = {};
-
-export default function RegisterPage({}: Props) {
+export default function RegisterPage() {
   return (
     <div className=" z-0 flex  h-screen items-center justify-center bg-slate-100">
       <div className="absolute left-0 top-[40%]  z-20 hidden h-[500px] w-full -skew-y-12 bg-[#ec97514f] xl:inline" />

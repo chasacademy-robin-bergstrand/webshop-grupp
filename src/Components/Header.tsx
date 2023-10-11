@@ -5,9 +5,7 @@ import { UserButton } from "@clerk/nextjs";
 import { useAuth } from "@clerk/nextjs";
 import Link from "next/link";
 
-type Props = {};
-
-export default function Header({}: Props) {
+export default function Header() {
   const { userId } = useAuth();
   return (
     <>

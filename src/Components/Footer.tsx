@@ -1,9 +1,7 @@
 import React from "react";
 import CategoryCard from "./CategoryCard";
 
-type Props = {};
-
-export default function Footer({}: Props) {
+export default function Footer() {
   return (
     <div className=" h-[350px]  bg-slate-300 py-20  text-center">
       <div className=" mx-auto flex w-10/12 justify-evenly">

@@ -1,12 +1,9 @@
-import { map } from "@trpc/server/observable";
 import { useSearchParams } from "next/navigation";
 import React from "react";
 import Layout from "~/Components/Layout";
 import { api } from "~/utils/api";
-import { useEffect } from "react";
-type Props = {};
 
-export default function SearchPage({}: Props) {
+export default function SearchPage() {
   const search = useSearchParams();
   const searchQuery = search ? search.get("q") : null;
   const encodeSearchQuery = encodeURI(searchQuery || "");

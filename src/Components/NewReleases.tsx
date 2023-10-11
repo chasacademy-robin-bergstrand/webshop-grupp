@@ -1,8 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-type Props = {};
 
-export default function NewReleases({}: Props) {
+export default function NewReleases() {
   return (
     <div className=" relative py-6 text-center">
       <div className="absolute left-0 top-[20%] -z-10 hidden h-[500px] w-full -skew-y-12 bg-[#ec97514f] xl:inline" />

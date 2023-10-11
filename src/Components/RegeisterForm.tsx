@@ -4,9 +4,7 @@ import { useRouter } from "next/router";
 import { CakeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
-type Props = {};
-
-export default function RegeisterForm({}: Props) {
+export default function RegeisterForm() {
   const { isLoaded, signUp, setActive } = useSignUp();
   const [emailAddress, setEmailAddress] = useState("");
   const [password, setPassword] = useState("");

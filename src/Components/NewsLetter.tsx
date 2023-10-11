@@ -1,8 +1,6 @@
 import React from "react";
 
-type Props = {};
-
-export default function NewsLetter({}: Props) {
+export default function NewsLetter() {
   return (
     <>
       <div className=" my-10 text-center">

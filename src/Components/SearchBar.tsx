@@ -2,9 +2,8 @@ import { encode } from "querystring";
 import React from "react";
 import { useState } from "react";
 import { useRouter } from "next/router";
-type Props = {};
 
-export default function SearchBar({}: Props) {
+export default function SearchBar() {
   const [searchQuery, setSearchQuery] = useState("");
   const router = useRouter();
   const onSearch = (e: React.FormEvent) => {

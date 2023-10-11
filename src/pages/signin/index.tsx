@@ -2,10 +2,7 @@ import { CheckCircleIcon } from "@heroicons/react/24/outline";
 import React from "react";
 
 import SignInForm from "~/Components/SignInForm";
-
-type Props = {};
-
-export default function RegisterPage({}: Props) {
+export default function RegisterPage() {
   return (
     <div className=" z-0 flex h-screen  flex-col items-center justify-center space-y-20 bg-slate-100">
       <div className=" cursor-pointer text-xl uppercase sm:tracking-[3px] lg:text-2xl lg:tracking-[20px]">
