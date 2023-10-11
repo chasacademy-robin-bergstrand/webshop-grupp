@@ -6,7 +6,7 @@ export default function NewReleases() {
     <div className=" relative py-6 text-center">
       <div className="absolute left-0 top-[20%] -z-10 hidden h-[500px] w-full -skew-y-12 bg-[#ec97514f] xl:inline" />
       <h2 className=" pb-14 text-5xl font-extrabold tracking-tight  ">
-        What's hot right now?
+        What is hot right now?
       </h2>
       <div className="  mx-auto flex w-8/12 justify-center text-center">
         <motion.div

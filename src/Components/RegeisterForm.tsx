@@ -29,7 +29,7 @@ export default function RegeisterForm() {
 
       // change the UI to our pending section.
       setPendingVerification(true);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error(JSON.stringify(err, null, 2));
     }
   };
@@ -51,10 +51,12 @@ export default function RegeisterForm() {
         console.log(JSON.stringify(completeSignUp, null, 2));
       }
       if (completeSignUp.status === "complete") {
-        await setActive({ session: completeSignUp.createdSessionId });
-        router.push("/");
+        await setActive({ session: completeSignUp.createdSessionId }).catch(
+          () => "obligatory catch",
+        );
+        router.push("/").catch(() => "obligatory catch");
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error(JSON.stringify(err, null, 2));
     }
   };

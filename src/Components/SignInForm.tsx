@@ -23,14 +23,16 @@ export default function SignInForm() {
 
       if (result.status === "complete") {
         console.log(result);
-        await setActive({ session: result.createdSessionId });
-        router.push("/");
+        await setActive({ session: result.createdSessionId }).catch(
+          () => "obligatory catch",
+        );
+        router.push("/").catch(() => "obligatory catch");
       } else {
         /*Investigate why the login hasn't completed */
         console.log(result);
       }
-    } catch (err: any) {
-      console.error("error", err.errors[0].longMessage);
+    } catch (err: unknown) {
+      console.error("error", err);
     }
   };
   return (
@@ -70,7 +72,7 @@ export default function SignInForm() {
             Sign in
           </button>
           <p className=" mt-6 text-center">
-            Don't have an account?{" "}
+            Do not have an account?{" "}
             <Link href="/register">
               <span className=" hover: cursor-pointer text-[#9f6fc7] hover:text-[#62457a]">
                 Sign up
