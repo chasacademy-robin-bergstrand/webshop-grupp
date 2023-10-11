@@ -1,39 +1,37 @@
 import { signIn, signOut, useSession } from "next-auth/react";
 import Head from "next/head";
 import CategoryCarousel from "~/Components/CategoryCarousell";
-import Footer from "~/Components/Footer";
-
 import Hero from "~/Components/Hero";
+import Layout from "~/Components/Layout";
 import NewReleases from "~/Components/NewReleases";
 import NewsLetter from "~/Components/NewsLetter";
 
 import { api } from "~/utils/api";
 
 export default function Home() {
-  const hello = api.example.hello.useQuery({ text: "from tRPC" });
+  /* const hello = api.example.hello.useQuery({ text: "from tRPC" }); */
 
   return (
     <div>
       <Head>
         <title>Clothing Store</title>
       </Head>
-      <main>
-        <section>
-          <Hero />
-        </section>
-        <section>
-          <CategoryCarousel />
-        </section>
-        <section>
-          <NewReleases />
-        </section>
-        <section>
-          <NewsLetter />
-        </section>
-        <section>
-          <Footer />
-        </section>
-      </main>
+      <Layout>
+        <main>
+          <section>
+            <Hero />
+          </section>
+          <section>
+            <CategoryCarousel />
+          </section>
+          <section>
+            <NewReleases />
+          </section>
+          <section>
+            <NewsLetter />
+          </section>
+        </main>
+      </Layout>
     </div>
   );
 }

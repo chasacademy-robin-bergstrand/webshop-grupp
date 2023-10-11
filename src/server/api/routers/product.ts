@@ -32,4 +32,22 @@ export const productRouter = createTRPCRouter({
         },
       });
     }),
-});
+    search: publicProcedure.input(
+      z.object({
+        searchTerm: z.string(),
+        
+      })
+    ).query(async({ ctx, input }) => {
+      const {searchTerm} = input;
+      const items = await ctx.db.product.findMany({
+        
+        where: {
+          name: {
+            contains: searchTerm,
+            mode:'insensitive'
+          },
+        },
+
+      })
+      return items
+})});

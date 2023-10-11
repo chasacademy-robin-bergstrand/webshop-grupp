@@ -1,8 +1,14 @@
 import React from "react";
 import { ShoppingBagIcon, UserCircleIcon } from "@heroicons/react/24/outline";
+import SearchBar from "./SearchBar";
+import { UserButton } from "@clerk/nextjs";
+import { useAuth } from "@clerk/nextjs";
+import Link from "next/link";
+
 type Props = {};
 
 export default function Header({}: Props) {
+  const { userId } = useAuth();
   return (
     <>
       <div className=" 500 bg-slate-400 px-5 text-center">
@@ -10,18 +16,18 @@ export default function Header({}: Props) {
       </div>
       <header>
         <div className=" px-5mx-auto flex items-center justify-between border-b-2 border-gray-100 p-6">
-          <div>
-            <input
-              type="text"
-              className=" rounded-md border border-gray-400 bg-gray-50 p-1 pl-2 text-gray-600 outline-none focus:border-gray-200 focus:ring-gray-200"
-              placeholder="Search"
-            />
-          </div>
+          <SearchBar />
           <div className=" cursor-pointer text-xl uppercase sm:tracking-[3px] lg:text-2xl lg:tracking-[20px]">
             Clothing Store
           </div>
           <div className="flex items-center space-x-5">
-            <UserCircleIcon className="h-8 w-8 cursor-pointer hover:opacity-60" />
+            {userId ? (
+              <UserButton afterSignOutUrl="/" />
+            ) : (
+              <Link href="/signin">
+                <UserCircleIcon className="h-8 w-8 cursor-pointer hover:opacity-60" />
+              </Link>
+            )}
             <ShoppingBagIcon className="h-8 w-8 cursor-pointer hover:opacity-60" />
           </div>
         </div>
