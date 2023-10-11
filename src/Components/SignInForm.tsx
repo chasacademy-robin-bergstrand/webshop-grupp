@@ -31,7 +31,7 @@ export default function SignInForm() {
         /*Investigate why the login hasn't completed */
         console.log(result);
       }
-    } catch (err: unknown) {
+    } catch (err: any) {
       console.error("error", err);
     }
   };
