@@ -1,4 +1,3 @@
-import { encode } from "querystring";
 import React from "react";
 import { useState } from "react";
 import { useRouter } from "next/router";
@@ -10,7 +9,9 @@ export default function SearchBar() {
     e.preventDefault();
 
     const encodeSearchQuery = encodeURI(searchQuery);
-    router.push(`/search?q=${encodeSearchQuery}`);
+    router
+      .push(`/search?q=${encodeSearchQuery}`)
+      .catch(() => "obligatory catch");
   };
 
   return (

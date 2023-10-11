@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import autumnCollection from "public/Images/autumnCollection.jpg";
 
-export default function () {
+export default function Hero() {
   return (
     <div className=" flex  flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c]">
       <div className="relative flex min-h-[calc(100vh-350px)] w-full flex-col items-center justify-center">
