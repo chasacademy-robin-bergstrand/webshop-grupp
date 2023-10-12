@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+    .formLabelDiv{
+        @apply flex flex-col
+    }
+    .fontLabel{
+        @apply font-medium
+    }
+    .input{
+        @apply  rounded-md border border-gray-400 bg-gray-50 p-2 pl-2 text-gray-600 outline-none focus:border-gray-200 focus:ring-gray-200
+    }
+
+    .submitButton{
+        @apply text-lg bg-[#ec97519d] p-2 rounded-lg text-white font-semibold hover:bg-[#b6733d85]
+    }
+}
