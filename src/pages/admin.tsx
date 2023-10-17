@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { api } from "~/utils/api";
+import { UploadButton } from "~/utils/uploadThing";
+import "@uploadthing/react/styles.css";
 
 export default function Admin() {
   const [name, setName] = useState<string>("");
@@ -10,7 +12,7 @@ export default function Admin() {
   const [category, setCategory] = useState<string>("");
 
   const allProducts = api.product.getAll.useQuery().data;
-
+  let imageURL: string | undefined = "";
   const createProduct = api.product.createProduct.useMutation({});
 
   /*  const createExercise = api.exercise.createExercise.useMutation({
@@ -21,13 +23,16 @@ export default function Admin() {
 
   const onSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    await createProduct.mutateAsync({
-      brand: brand,
-      name: name,
-      description: description,
-      price: price,
-      stock: stock,
-    });
+    imageURL
+      ? await createProduct.mutateAsync({
+          brand: brand,
+          name: name,
+          description: description,
+          price: price,
+          stock: stock,
+          imageURL: imageURL,
+        })
+      : console.log("failed to add imageurl");
   };
 
   return (
@@ -81,6 +86,19 @@ export default function Admin() {
             setCategory(e.target.value);
           }}
         />
+        <UploadButton
+          endpoint="imageUploader"
+          onClientUploadComplete={(res) => {
+            // Do something with the response
+            res ? (imageURL = res[0]?.url) : console.log("failed to fetch res");
+            console.log("Files: ", res);
+            alert("Upload Completed");
+          }}
+          onUploadError={(error: Error) => {
+            // Do something with the error.
+            alert(`ERROR! ${error.message}`);
+          }}
+        />
         <button type="submit">Add</button>
       </form>
       <div className="flex gap-5">
@@ -92,6 +110,7 @@ export default function Admin() {
               <h2>Description: {product.description}</h2>
               <h2>Price: {product.price}</h2>
               <h2>Stock: {product.stock}</h2>
+              <h2>Image: {product.imageURL}</h2>
             </div>
           );
         })}

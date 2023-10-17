@@ -14,7 +14,7 @@ export default function NewReleases() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1.5 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 gap-4 md:grid-cols-4 "
+          className=""
         >
           <div className="grid gap-4">
             <div>
