@@ -13,12 +13,12 @@ export default {
         btnRemove: "#88232B",
       },
       fontFamily: {
-        poppins: ["font-family: 'Poppins', sans-serif;"],
+        poppins: ["Poppins", "sans-serif"],
+      },
+      boxShadow: {
+        menuModal: "0px 24px 48px 0px rgba(0, 0, 0, 0.16)",
       },
     },
   },
-  plugins: [
-
-    require('tailwind-scrollbar'),
-  ],
+  plugins: [require("tailwind-scrollbar")],
 } satisfies Config;

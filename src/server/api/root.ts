@@ -11,7 +11,7 @@ import { categoryRouter } from "./routers/category";
 export const appRouter = createTRPCRouter({
   example: exampleRouter,
   product: productRouter,
-  category: categoryRouter
+  category: categoryRouter,
 });
 
 // export type definition of API

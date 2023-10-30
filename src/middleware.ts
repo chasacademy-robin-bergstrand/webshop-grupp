@@ -1,8 +1,12 @@
-import { authMiddleware} from "@clerk/nextjs";
-
+import { authMiddleware } from "@clerk/nextjs";
 
 export default authMiddleware({
-    publicRoutes:["/","/search","/register","/signin","/products","/api/trpc/product.search",
+  publicRoutes: [
+    "/",
+    "/search",
+    "/register",
+    "/signin",
+    "/api/trpc/product.search",
     "/admin",
     "/api/trpc/product.createProduct",
     "/api/trpc/product.getAll",
@@ -10,10 +14,11 @@ export default authMiddleware({
     "/api/trpc/category.getAll",
     "/api/trpc/category.create",
     "/api/trpc/product.getAll,category.getAll",
-
-]
-});;
+    "/api/trpc/product.update",
+    "/api/uploadthing",
+  ],
+});
 
 export const config = {
-    matcher: ['/((?!.+\\.[\\w]+$|_next).*)', '/', '/(api|trpc)(.*)'],
-}
+  matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"],
+};
