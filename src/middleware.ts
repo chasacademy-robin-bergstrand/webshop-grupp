@@ -15,6 +15,7 @@ export default authMiddleware({
     "/api/trpc/category.create",
     "/api/trpc/product.getAll,category.getAll",
     "/api/trpc/product.update",
+    "/api/uploadthing",
   ],
 });
 

@@ -17,6 +17,7 @@ export const productRouter = createTRPCRouter({
       },
     });
   }),
+
   createProduct: publicProcedure
     .input(
       z.object({
@@ -25,6 +26,7 @@ export const productRouter = createTRPCRouter({
         description: z.string(),
         price: z.number(),
         stock: z.number(),
+        imageURL: z.string(),
         categoryId: z.string(),
         newCategoryName: z.string(),
       }),
@@ -58,6 +60,7 @@ export const productRouter = createTRPCRouter({
           description: input.description,
           price: input.price,
           stock: input.stock,
+          imageURL: input.imageURL,
           categoryId: input.categoryId,
         },
       });
@@ -70,12 +73,14 @@ export const productRouter = createTRPCRouter({
     )
     .query(async ({ ctx, input }) => {
       const { searchTerm } = input;
+
       const items = await ctx.db.product.findMany({
         where: {
-          name: {
-            contains: searchTerm,
-            //mode: "insensitive",
-          },
+          OR: [
+            { name: { contains: searchTerm, mode: "insensitive" } },
+            { description: { contains: searchTerm, mode: "insensitive" } },
+            { brand: { contains: searchTerm, mode: "insensitive" } },
+          ],
         },
       });
       return items;
@@ -113,5 +118,22 @@ export const productRouter = createTRPCRouter({
           categoryId: input.categoryId,
         },
       });
+    }),
+  singleItem: publicProcedure
+    .input(
+      z.object({
+        singleItem: z.string(),
+      }),
+    )
+    .query(async ({ ctx, input }) => {
+      const { singleItem } = input;
+
+      const item = await ctx.db.product.findMany({
+        where: {
+          name: { contains: singleItem, mode: "insensitive" },
+        },
+        take: 1,
+      });
+      return item[0];
     }),
 });

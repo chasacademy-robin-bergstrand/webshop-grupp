@@ -2,6 +2,8 @@ import { useState } from "react";
 import AdminPageProduct from "~/Components/AdminPageProduct";
 import Layout from "~/Components/Layout";
 import { api } from "~/utils/api";
+import { UploadButton } from "~/utils/uploadThing";
+import "@uploadthing/react/styles.css";
 
 export default function Admin() {
   const [name, setName] = useState<string>("");
@@ -16,6 +18,7 @@ export default function Admin() {
 
   const allProducts = api.product.getAll.useQuery().data;
 
+  let imageURL: string | undefined = "";
   const allCategories = api.category.getAll.useQuery().data;
 
   const createProduct = api.product.createProduct.useMutation({
@@ -38,15 +41,18 @@ export default function Admin() {
 
   const onSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    await createProduct.mutateAsync({
-      brand: brand,
-      name: name,
-      description: description,
-      price: price,
-      stock: stock,
-      categoryId: categoryId,
-      newCategoryName: newCategoryName,
-    });
+    imageURL
+      ? await createProduct.mutateAsync({
+          brand: brand,
+          name: name,
+          description: description,
+          price: price,
+          stock: stock,
+          categoryId: categoryId,
+          newCategoryName: newCategoryName,
+          imageURL: imageURL,
+        })
+      : console.log("failed to add imageurl");
   };
 
   return (
@@ -143,6 +149,21 @@ export default function Admin() {
               />
             </>
           )}
+          <UploadButton
+            endpoint="imageUploader"
+            onClientUploadComplete={(res) => {
+              // Do something with the response
+              res
+                ? (imageURL = res[0]?.url)
+                : console.log("failed to fetch res");
+              console.log("Files: ", res);
+              alert("Upload Completed");
+            }}
+            onUploadError={(error: Error) => {
+              // Do something with the error.
+              alert(`ERROR! ${error.message}`);
+            }}
+          />
           <button
             type="submit"
             className="self-center rounded-md border-2 bg-gray-200 px-4 py-2 font-semibold"

@@ -15,7 +15,7 @@ export default function SearchBar() {
   };
 
   return (
-    <div>
+    <div className="hidden sm:inline-flex">
       <form onSubmit={onSearch}>
         <input
           value={searchQuery}

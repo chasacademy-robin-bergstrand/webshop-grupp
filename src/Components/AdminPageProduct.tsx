@@ -1,6 +1,7 @@
 import type { Prisma } from "@prisma/client";
 import { useState } from "react";
 import { api } from "~/utils/api";
+import Image from "next/image";
 
 type ProductWithCategory = Prisma.ProductGetPayload<{
   include: { category: true };
@@ -119,14 +120,23 @@ export default function AdminPageProduct(product: ProductWithCategory) {
           </form>
         </>
       ) : (
-        <>
-          <h1 className="text-center text-lg">{product.name}</h1>
-          <h2>Category: {product.category?.name}</h2>
-          <h2>Brand: {product.brand}</h2>
-          <h2>Description: {product.description}</h2>
-          <h2>Price: {product.price}</h2>
-          <h2>Stock: {product.stock}</h2>
-        </>
+        <div className="flex">
+          <div>
+            <h1 className="text-center text-lg">{product.name}</h1>
+            <h2>Category: {product.category?.name}</h2>
+            <h2>Brand: {product.brand}</h2>
+            <h2>Description: {product.description}</h2>
+            <h2>Price: {product.price}</h2>
+            <h2>Stock: {product.stock}</h2>
+          </div>
+          <Image
+            src={product.imageURL}
+            width={100}
+            height={100}
+            alt="Product Image"
+            className="h-full object-contain"
+          />
+        </div>
       )}
       {isEditing ? (
         <>

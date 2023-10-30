@@ -16,7 +16,7 @@ export default function Header() {
       <header>
         <div className=" px-5mx-auto flex items-center justify-between border-b-2 border-gray-100 p-6">
           <SearchBar />
-          <div className=" cursor-pointer text-xl uppercase sm:tracking-[3px] lg:text-2xl lg:tracking-[20px]">
+          <div className=" cursor-pointer text-xl uppercase tracking-[3px] sm:tracking-[8px] lg:text-2xl lg:tracking-[20px]">
             Clothing Store
           </div>
           <div className="flex items-center space-x-5">

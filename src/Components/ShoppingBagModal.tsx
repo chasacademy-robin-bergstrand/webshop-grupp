@@ -19,7 +19,7 @@ export default function ShoppingBagModal(props: Props) {
               <input
                 type="text"
                 className="mx-1 w-6 text-center text-base focus:outline-gray-200"
-                value={1}
+                //value={1}
               />
               <button>+</button>
             </div>
@@ -34,7 +34,7 @@ export default function ShoppingBagModal(props: Props) {
               <input
                 type="text"
                 className="mx-1 w-6 text-center text-base focus:outline-gray-200"
-                value={1}
+                //value={1}
               />
               <button>+</button>
             </div>
@@ -49,7 +49,7 @@ export default function ShoppingBagModal(props: Props) {
               <input
                 type="text"
                 className="mx-1 w-6 text-center text-base focus:outline-gray-200"
-                value={1}
+                //value={1}
               />
               <button>+</button>
             </div>
@@ -64,7 +64,7 @@ export default function ShoppingBagModal(props: Props) {
               <input
                 type="text"
                 className="mx-1 w-6 text-center text-base focus:outline-gray-200"
-                value={3}
+                //value={3}
               />
               <button>+</button>
             </div>
