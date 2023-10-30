@@ -4,6 +4,7 @@ import SearchBar from "./SearchBar";
 import { UserButton } from "@clerk/nextjs";
 import { useAuth } from "@clerk/nextjs";
 import Link from "next/link";
+import ShoppingBagButton from "./ShoppingBagButton";
 
 export default function Header() {
   const { userId } = useAuth();
@@ -26,7 +27,7 @@ export default function Header() {
                 <UserCircleIcon className="h-8 w-8 cursor-pointer hover:opacity-60" />
               </Link>
             )}
-            <ShoppingBagIcon className="h-8 w-8 cursor-pointer hover:opacity-60" />
+            <ShoppingBagButton />
           </div>
         </div>
         <nav className=" flex justify-center ">
