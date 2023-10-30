@@ -13,7 +13,7 @@ type productFields = {
   imageURL: string;
 };
 
-export default function () {
+export default function SingleProduct() {
   const router = useRouter();
   const productName = router.query.productName;
   const validSearchItem: string = productName as string;

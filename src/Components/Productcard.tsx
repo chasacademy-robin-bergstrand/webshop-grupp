@@ -16,8 +16,8 @@ export default function Productcard({ Name, Price, ImageSrc }: Props) {
     <div className="py-5">
       <div
         className="relative mx-auto max-h-[550px] max-w-[350px] cursor-pointer xl:max-h-full xl:max-w-full"
-        onClick={() => {
-          router.push(`products/${Name}`);
+        onClick={async () => {
+          await router.push(`products/${Name}`);
         }}
       >
         <div className="relative">

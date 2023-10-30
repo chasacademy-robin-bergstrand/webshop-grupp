@@ -21,7 +21,7 @@ export const productRouter = createTRPCRouter({
         price: z.number(),
         stock: z.number(),
         
-        imageURL: z.string()
+        imageURL: z.string() 
       }),
     )
     .mutation(({ input, ctx }) => {
@@ -32,7 +32,7 @@ export const productRouter = createTRPCRouter({
           description: input.description,
           price: input.price,
           stock: input.stock,
-          imageURL: input.imageURL,
+          imageURL: input.imageURL, 
           
           
         },
