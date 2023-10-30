@@ -7,7 +7,7 @@ export default function ShoppingBagModal(props: Props) {
     <div
       className={`${
         props.open ? "" : "invisible -translate-y-10 opacity-0"
-      } shadow-menuModal absolute right-0 top-11 z-[101] flex h-96 min-h-fit w-80 flex-col rounded-2xl bg-white p-6 opacity-100 transition `}
+      } absolute right-0 top-11 z-[101] flex h-96 min-h-fit w-80 flex-col rounded-2xl bg-white p-6 opacity-100 shadow-menuModal transition `}
     >
       <div className=" font-poppins text-xl">Shopping Cart</div>
       <div className="my-4 overflow-y-scroll scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-peach/80">
@@ -80,5 +80,3 @@ export default function ShoppingBagModal(props: Props) {
     </div>
   );
 }
-
-//rgba(0, 0, 0, 0.16) 0px 24px 48px
