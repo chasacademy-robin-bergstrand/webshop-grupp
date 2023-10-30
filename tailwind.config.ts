@@ -4,6 +4,10 @@ export default {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      animation: {
+        fade: "fadeOut 5s ease-in-out",
+      },
+
       colors: {
         mainColor: "#EEEDE7",
         darkGray: "#414754",
@@ -17,8 +21,5 @@ export default {
       },
     },
   },
-  plugins: [
-
-    require('tailwind-scrollbar'),
-  ],
+  plugins: [require("tailwind-scrollbar")],
 } satisfies Config;

@@ -36,12 +36,12 @@ export default function SignInForm() {
     }
   };
   return (
-    <div className="h-full w-full space-y-14 rounded-2xl bg-white px-16 py-10  shadow-lg">
+    <div className="h-full w-full space-y-14 rounded-2xl bg-white px-16 py-10 text-darkGray  shadow-lg">
       <h2 className=" text-center text-2xl font-semibold">
         Sign in to your account
       </h2>
 
-      <form className=" space-y-8" onSubmit={handleSubmit}>
+      <form className=" space-y-8 text-darkGray" onSubmit={handleSubmit}>
         <div className="formLabelDiv">
           <label className="fontLabel" htmlFor="email">
             Email
@@ -55,7 +55,7 @@ export default function SignInForm() {
           />
         </div>
 
-        <div className="formLabelDiv">
+        <div className="formLabelDiv text-darkGray">
           <label className="fontLabel" htmlFor="password">
             Password
           </label>

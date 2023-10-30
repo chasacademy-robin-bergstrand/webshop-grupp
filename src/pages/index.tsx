@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Clothing Store</title>
+        <title>CHAS CLOTHING</title>
       </Head>
       <Layout>
         <main>

@@ -12,7 +12,7 @@ export default function Hero() {
           className=" absolute z-0 max-h-[calc(100vh-350px)] w-full object-cover opacity-80 "
         />
         <div className="z-50">
-          <h1 className=" text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
+          <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
             Autumn sales
           </h1>
           <div className="flex flex-col items-center pt-4">

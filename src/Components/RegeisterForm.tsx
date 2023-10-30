@@ -64,10 +64,12 @@ export default function RegeisterForm() {
     <>
       {!pendingVerification && (
         <div className="h-full w-1/2 space-y-14 rounded-r-2xl bg-white px-16 py-10  shadow-lg">
-          <h2 className=" text-2xl font-semibold">Become a store member</h2>
+          <h2 className=" text-2xl font-semibold text-darkGray">
+            Become a store member
+          </h2>
           <form className=" space-y-10" onSubmit={handleSubmit}>
             <div className="formLabelDiv">
-              <label className="fontLabel" htmlFor="email">
+              <label className="fontLabel text-darkGray" htmlFor="email">
                 Email
               </label>
               <input
@@ -79,15 +81,15 @@ export default function RegeisterForm() {
               />
             </div>
             <div className="formLabelDiv">
-              <label className=" fontLabel">First name</label>
+              <label className=" fontLabel text-darkGray">First name</label>
               <input className="input" type="text" />
             </div>
             <div className="formLabelDiv">
-              <label className="fontLabel">Last name</label>
+              <label className="fontLabel text-darkGray">Last name</label>
               <input className="input" type="text" />
             </div>
             <div className="formLabelDiv">
-              <label className="fontLabel" htmlFor="password">
+              <label className="fontLabel text-darkGray" htmlFor="password">
                 Password
               </label>
               <input
@@ -105,7 +107,7 @@ export default function RegeisterForm() {
               <p className=" mt-6 text-center">
                 Have an account?{" "}
                 <Link href="/signin">
-                  <span className=" hover: cursor-pointer text-[#9f6fc7] hover:text-[#62457a]">
+                  <span className=" text-[#9f6fc7] hover:cursor-pointer hover:text-[#62457a]">
                     Sign in
                   </span>
                 </Link>
