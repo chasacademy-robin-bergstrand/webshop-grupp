@@ -21,7 +21,7 @@ export default function Footer() {
           <p className=" text-sm">Investor relations</p>
           <p className=" text-sm">For the future</p>
         </div>
-        <div className="flex flex-col space-y-2 text-left">
+        <div className=" flex flex-col space-y-2 text-left">
           <h2 className=" text-xl font-medium ">Help</h2>
           <p className=" text-sm">Cústomer service</p>
           <p className=" text-sm">My account</p>

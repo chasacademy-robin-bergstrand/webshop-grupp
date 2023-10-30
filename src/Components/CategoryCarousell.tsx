@@ -7,7 +7,7 @@ export default function CategoryCarousel() {
       <h2 className=" text-5xl font-extrabold tracking-tight  ">
         Popular categories
       </h2>
-      <div className="  mx-auto flex w-10/12  justify-center space-x-10 overflow-x-scroll pt-14 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#b451b4]/80">
+      <div className="  mx-auto flex w-10/12  justify-center space-x-10 pt-14 ">
         <CategoryCard />
         <CategoryCard />
         <CategoryCard />
